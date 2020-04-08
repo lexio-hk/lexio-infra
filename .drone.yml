@@ -8,3 +8,18 @@ steps:
   commands:
   - echo hello
   - echo world
+
+---
+kind: pipeline
+type: docker
+name: custom
+
+steps:
+- name: greeting
+  image: alpine
+  commands:
+  - echo hello
+  - echo world
+trigger:
+  event:
+  - custom
